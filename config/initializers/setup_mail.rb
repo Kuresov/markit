@@ -7,7 +7,7 @@ if Rails.env.development?
     content_type: 'text/html',
     user_name: ENV['MAILGUN_LOGIN'],
     password: ENV['MAILGUN_PASS'],
-    domain: 'kuresov-markit.heroku.com',
+    domain: 'kuresov-markit.herokuapp.com',
     enable_starttls_auto: true
   }
 end
