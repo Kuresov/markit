@@ -6,7 +6,7 @@ if Rails.env.development? || Rails.env.production?
     authentication: :plain,
     user_name:      ENV['MAILGUN_LOGIN'],
     password:       ENV['MAILGUN_PASSWORD'],
-    domain:         'heroku.com',
+    domain:         'kuresov-markit.herokuapp.com',
     enable_starttls_auto: true
   }
 end
