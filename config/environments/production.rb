@@ -78,6 +78,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # ActionMailer settings
-  config.action_mailer.default_url_options = { host: 'http://kuresov-markit.herokuapp.com/' }
+  config.action_mailer.default_url_options = { host: 'http://kuresov-markit.herokuapp.com' }
+  config.action_mailer.perform_deliveries = true
   config.force_ssl = true
 end
