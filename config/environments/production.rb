@@ -79,4 +79,5 @@ Rails.application.configure do
 
   # ActionMailer settings
   config.action_mailer.default_url_options = { host: 'http://kuresov-markit.herokuapp.com/' }
+  config.force_ssl = true
 end
