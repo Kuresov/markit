@@ -5,7 +5,7 @@ if Rails.env.development? || Rails.env.production?
     port:           465,
     authentication: :plain,
     user_name:      ENV['MAILGUN_SMTP_LOGIN'],
-    password:       ENV['MAILGUN_SMTP_PASSSWORD'],
+    password:       ENV['MAILGUN_SMTP_PASSWORD'],
     domain:         'heroku.com',
     enable_starttls_auto: true
   }
