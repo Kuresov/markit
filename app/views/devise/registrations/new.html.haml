@@ -1,0 +1,26 @@
+%h1 Sign Up
+
+.row
+  .col-md-4
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = devise_error_messages!
+
+      .field
+        = f.label :email
+        = f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'Enter Email'
+       
+
+      .field
+        = f.label :password
+        = f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: 'Enter Password'
+        %br
+        %small="(#{@minimum_password_length} characters minimum)"
+
+      .field
+        = f.label :password_confirmation
+        = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control', placeholder: 'Enter Password Confirmation'
+
+      .actions
+        = f.submit "Sign up"
+
+    = render "devise/shared/links"
