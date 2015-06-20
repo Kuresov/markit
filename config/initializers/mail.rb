@@ -4,9 +4,9 @@ if Rails.env.development? || Rails.env.production?
     address:        'smtp.mailgun.org',
     port:           465,
     authentication: :plain,
-    user_name:      ENV['MAILGUN_LOGIN'],
-    password:       ENV['MAILGUN_PASSWORD'],
-    domain:         'app3efb071030fe4d83850e757afc71e9b1.mailgun.org',
+    user_name:      ENV['MAILGUN_SMTP_LOGIN'],
+    password:       ENV['MAILGUN_SMTP_PASSWORD'],
+    domain:         'heroku.com',
     enable_starttls_auto: true
   }
 end
