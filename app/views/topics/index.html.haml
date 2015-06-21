@@ -1,0 +1,16 @@
+%h1 Topics
+
+-#for each topic
+  -#show the topic title
+    -#loop over the contents of the topic's bookmark collection
+
+.row
+  - @topics.each do |topic|
+    .col-md-12
+      %h3
+        = topic.title
+      .clearfix
+        = link_to "Edit Topic", edit_topic_path(topic)
+      - topic.bookmarks.each do |bookmark|
+        .col-md-3 
+          =bookmark.url
