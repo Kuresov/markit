@@ -1,0 +1,5 @@
+%h1 #{@topic.title}
+= link_to "Edit Topic", edit_topic_path(@topic)
+
+.col-md-12
+  = render partial: 'bookmarks', locals: { topic: @topic }

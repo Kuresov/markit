@@ -1,13 +1,14 @@
 class TopicsController < ApplicationController
   def index
     @topics = Topic.all
-    #@bookmarks = Bookmark.where(topic_id: )
   end
 
   def show
+    @topic = Topic.find(params[:id])
   end
 
   def new
+    @topic = Topic.new
   end
 
   def edit
@@ -15,7 +16,7 @@ class TopicsController < ApplicationController
   end
 
     def create
-      @topic = Topic.new(params.require(:topic).permit(:name, :user_id))
+      @topic = Topic.new(params.require(:topic).permit(:title, :user_id))
 
       if @topic.save
         redirect_to @topic, notice: "New topic saved"
@@ -28,10 +29,10 @@ class TopicsController < ApplicationController
     def update
       @topic = Topic.find(params[:id])
 
-      if @topic.update_attributes(params.require(:topic).permit(:name))
+      if @topic.update_attributes(params.require(:topic).permit(:title))
         redirect_to @topic
       else
-        flash[:error] = "There was a problem updating #{@topic.name}"
+        flash[:error] = "There was a problem updating #{@topic.title}"
         render :edit
       end
     end
@@ -40,7 +41,7 @@ class TopicsController < ApplicationController
       @topic = Topic.find(params[:id])
 
       if @topic.destroy
-        flash[:notice] = "#{@topic.name} has been deleted"
+        flash[:notice] = "#{@topic.title} has been deleted"
         redirect_to topics_path
       else
         flash[:error] = "There was a problem deleting the topic. Please try again!"
