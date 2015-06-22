@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
   def index
-    @topics = Topic.all
+    @topics = Topic.joins(:bookmarks).uniq # May want to make this more user-friendly... How would one create a topic, which is then empty, and then add a bookmark to it if they left the topic's #show page?
   end
 
   def show
