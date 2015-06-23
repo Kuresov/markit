@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :topics do
-    #resources :bookmarks, only: [:show, :new, :edit]
-    resources :bookmarks, except: [:index]
+    resources :bookmarks, except: [:index, :show]
+    #resources :bookmarks, only: [:new, :create]
   end
+
+  #resources :bookmarks, only: [:edit, :update, :destroy]
 
   get 'welcome/about'
 
