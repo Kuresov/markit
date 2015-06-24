@@ -2,3 +2,7 @@
   .col-md-3.bookmark-loop
     .bookmark-box
       = bookmark.url
+      .small
+        = link_to "Edit Bookmark", edit_topic_bookmark_path(bookmark.topic, bookmark)
+      .small
+        = link_to "Delete Bookmark", [bookmark.topic, bookmark], method: :delete
