@@ -1,0 +1,11 @@
+%h1 Topics
+
+= link_to "New Topic", new_topic_path
+
+.row
+  - @topics.each do |topic|
+    - if topic.bookmarks.length > 0
+      .col-md-12
+        %h3
+          = link_to "##{topic.title}", topic
+        = render partial: "bookmarks", locals: { topic: topic }
