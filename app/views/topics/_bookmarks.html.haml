@@ -8,3 +8,5 @@
       - if policy(bookmark).destroy?
         .small
           = link_to "Delete Bookmark", [bookmark.topic, bookmark], method: :delete
+      - if policy(Like.new).create?
+        = render partial: 'likes/like', locals: { bookmark: bookmark }
