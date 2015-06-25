@@ -1,6 +1,8 @@
 %h1 Topics
 
-= link_to "New Topic", new_topic_path
+- if policy(@topics).new?
+  %button.btn.btn-success
+    = link_to "New Topic", new_topic_path
 
 .row
   - @topics.each do |topic|

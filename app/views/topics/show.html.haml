@@ -1,6 +1,15 @@
 %h1 #{@topic.title}
-= link_to "Edit Topic", edit_topic_path(@topic)
-= link_to "New Bookmark", new_topic_bookmark_path(@topic)
+- if policy(@topic).edit?
+  %button.btn.btn-primary
+    = link_to "Edit Topic", edit_topic_path(@topic)
+  %button.btn.btn-danger
+    = link_to "Delete Topic", @topic, method: :delete
+- if policy(@topic.bookmarks).new?
+  %button.btn.btn-success
+    = link_to "New Bookmark", new_topic_bookmark_path(@topic)
+
+.row-buffer
 
 .col-md-12
-  = render partial: 'bookmarks', locals: { topic: @topic }
+  .media-body
+    = render partial: 'bookmarks', locals: { topic: @topic }
