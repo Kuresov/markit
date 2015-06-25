@@ -16,6 +16,8 @@ end
 gem 'devise'
 gem 'figaro'
 
+gem 'pundit'
+
 # HAML for markup
 gem 'haml'
 gem 'bootstrap-sass'
