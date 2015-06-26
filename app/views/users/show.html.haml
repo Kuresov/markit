@@ -1,0 +1,8 @@
+%h1 #{@user.name || @user.email}'s Profile
+
+.col-md-12
+  .media-body
+    = render partial: 'topics/bookmarks', locals: { record: @user }
+.col-md-12
+  .media-body
+    = render partial: 'likes/liked_bookmarks', locals: { record: @liked_bookmarks }
