@@ -2,11 +2,10 @@
   .col-md-3.bookmark-loop
     .bookmark-box
       = bookmark.url
+      - if policy(Like.new).create?
+        = render partial: 'likes/like', locals: { bookmark: bookmark }
       - if policy(bookmark).edit?
         .small
           = link_to "Edit Bookmark", edit_topic_bookmark_path(bookmark.topic, bookmark)
-      - if policy(bookmark).destroy?
         .small
           = link_to "Delete Bookmark", [bookmark.topic, bookmark], method: :delete
-      - if policy(Like.new).create?
-        = render partial: 'likes/like', locals: { bookmark: bookmark }
