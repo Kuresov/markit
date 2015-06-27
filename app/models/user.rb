@@ -8,6 +8,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
+  def to_param
+    "#{id} #{email.split('@').first}".parameterize
+  end
+
   def admin?
     role == 'admin'
   end
