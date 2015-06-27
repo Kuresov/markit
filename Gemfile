@@ -18,6 +18,8 @@ gem 'figaro'
 
 gem 'pundit'
 
+gem 'querystring'
+gem 'embedly'
 # HAML for markup
 gem 'haml'
 gem 'bootstrap-sass'
