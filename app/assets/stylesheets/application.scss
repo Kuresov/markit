@@ -26,3 +26,26 @@
   color: #FFF;
   text-decoration: none;
 }
+.bookmark-loop {
+  margin: 0 0 20px 0;
+}
+
+.bookmark-box {
+  text-align: center;
+  width: 200px;
+  height: 200px;
+  padding: 10px;
+  border: 1px solid #BBBBBB;
+}
+
+  .small {
+    display:none;
+  }
+
+.bookmark-box:hover .small {
+  display:block;
+}
+
+.btn.favorite {
+  margin: 0;
+}
