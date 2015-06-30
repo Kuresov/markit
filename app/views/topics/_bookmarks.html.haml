@@ -1,7 +1,11 @@
 - record.bookmarks.each do |bookmark|
+  - bookmark_title = bookmark.url.split('.')[1]
   .col-md-3.bookmark-loop
     .bookmark-box
-      = bookmark.url
+      = link_to "#{bookmark.url}" do
+        %h4
+          = bookmark_title
+      = embed(bookmark.url)[:description].truncate(90)
       - if policy(Like.new).create?
         = render partial: 'likes/like', locals: { bookmark: bookmark }
       - if policy(bookmark).edit?
